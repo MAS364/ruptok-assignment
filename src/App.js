@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Modal from "./components/modal";
+import UserTable from "./components/table";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([]);
+
+  // Fetching the user data
+  const fetchUser = async () => {
+    try {
+      const res = await fetch("https://dummyjson.com/users");
+      const data = await res.json();
+
+      if (data.users && data.users.length > 0) {
+        setUsers(data.users);
+      }
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const handleFormSubmit = (formData) => {
+    setUsers((prevUsers) => [
+      ...prevUsers,
+      {
+        id: prevUsers.length + 1, // You should use a more robust way to generate IDs
+        ...formData,
+      },
+    ]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Modal onSubmit={handleFormSubmit} />
+      <div className="table-container">
+        <UserTable users={users} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

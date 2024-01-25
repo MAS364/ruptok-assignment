@@ -1,38 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
+  background-color: #faf9f6;
+  /* border: 1px solid red; */
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customer-button {
+  width: 50%;
+  margin-left: 400px;
+  margin-top: 50px;
+  /* border: 1px solid red; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.customer-button > button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1em;
+  background-color: red;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-size: 1em;
+  width: 90%;
+  text-align: left;
+  border-radius: 5px 5px 0px 0px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  /* padding: 0px 20px; */
+  /* border: 5px solid red; */
+}
+
+thead tr {
+  background-color: #443c68;
+  padding: 5px;
   color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+thead th {
+  padding: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+tbody tr {
+  /* background-color: beige; */
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody td {
+  /* border: 1px solid red; */
+  padding: 1em;
+  margin: 20px;
+}
+
+table tbody tr {
+  background-color: #f3f3f3;
+  padding: 500px;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+/* Add these styles to your CSS file or within your component */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.user-styling {
+  border: 10px solid red;
+}
+/* Media Queries */
+@media (max-width: 600px) {
+  .App {
+    width: 100%;
+    margin: 20px auto;
+    border: 1px solid red;
   }
-  to {
-    transform: rotate(360deg);
+
+  .customer-button {
+    border: 2px solid red;
+    display: block;
+    margin: 10px auto;
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid red;
+  }
+
+  table tbody {
+    /* border: 10px solid red; */
+    margin: 10px;
+  }
+
+  table tbody tr {
+    border: 2px solid black;
+    margin-bottom: 15px;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 15ch auto;
+    padding: 0.5rem 1rem;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  td::before {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  td:nth-of-type(1)::before {
+    content: "UserID :";
+  }
+
+  td:nth-of-type(2)::before {
+    content: "Name :";
+  }
+
+  td:nth-of-type(3)::before {
+    content: "Email :";
+  }
+  td:nth-of-type(4)::before {
+    content: "Phone :";
+  }
+
+  tr:nth-of-type(even) {
+    background-color: #fefefe;
   }
 }
