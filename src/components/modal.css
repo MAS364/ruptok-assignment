@@ -1,67 +1,79 @@
-/* Modal.css */
-
+/* Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
+  /* Modal Content */
   .modal-content {
     background-color: #fff;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Adjust width as needed */
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    position: relative;
   }
   
+  /* Close Button */
   .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
+    font-size: 20px;
+    color: #888;
   }
   
-  .form-container {
-    margin-top: 20px;
-  }
-  
-  .input-label {
+  /* Form Label */
+  label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   
-  .input-field {
-    width: 100%;
+  /* Input Fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 5px 0;
+    box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
   }
   
-  .input-field:focus {
-    outline: none;
-    border-color: blue; /* Change border color on focus */
-  }
-  
-  .submit-button {
+  /* Submit Button */
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
     padding: 10px 20px;
-    background-color: blue;
-    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    margin-top: 10px;
   }
   
-  .submit-button:hover {
-    background-color: darkblue; /* Change background color on hover */
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Customer Button */
+  .customer-button {
+    margin-bottom: 20px;
+  }
+  
+  /* Media Query for Max Width 600px */
+  @media (max-width: 600px) {
+    .modal-content {
+      max-width: 90%;
+    }
   }
   
