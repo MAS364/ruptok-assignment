@@ -7,10 +7,14 @@ This project is a Customer Management System built using ReactJS. It fetches and
 - Visual Studio Code (VS Code) for development.
 
 ## Features:
-- Fetches user data from the DummyJSON Users API.
-- Displays user information such as Name, Email, Phone, and Address.
-- Provides a user-friendly interface for managing customers.
-- Responsive design for seamless usage on various devices.
+
+
+- Fetches and displays user data using ReactJS.
+- Develops a user-friendly page with a table showcasing User ID, Name, Email, and Phone.
+- Implements an "Add Customer" button to open a modal.
+- Modals have fields for Name, Email, and Phone.
+- Adds submitted data seamlessly to the table.
+- Ensures smooth interactions, responsive design, and clear user feedback.
 
 
 
@@ -66,9 +70,6 @@ This project is a Customer Management System built using ReactJS. It fetches and
 
 - Contributions are welcome! Feel free to fork the repository, make changes, and submit pull requests.
 
-## License:
-
-- This project is licensed under the MIT License.
 
 ## Acknowledgments:
 
