@@ -1,5 +1,5 @@
 import React from "react";
-import User from "./user";
+import User from "./User"; 
 import "../App.css";
 
 const UserTable = ({ users }) => {
@@ -14,8 +14,9 @@ const UserTable = ({ users }) => {
         </tr>
       </thead>
       <tbody>
+        {/* Rendering each user as a row in the table */}
         {users.map((user) => (
-          <User key={user.id} user={user} className="user-styling" />
+          <User key={user.id} user={user} />
         ))}
       </tbody>
     </table>
