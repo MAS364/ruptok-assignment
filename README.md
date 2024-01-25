@@ -27,26 +27,27 @@ This project is a Customer Management System built using ReactJS. It fetches and
     ```
 
     Replace `<repository-url>` with the URL of the GitHub repository.
+    url : https://github.com/MAS364/ruptok-assignment
 
-2. **Navigate to the Project Directory:**
+3. **Navigate to the Project Directory:**
 
     ```bash
     cd customer-management-system
     ```
 
-3. **Install Dependencies:**
+4. **Install Dependencies:**
 
     ```bash
     npm install
     ```
 
-4. **Start the Development Server:**
+5. **Start the Development Server:**
 
     ```bash
     npm start
     ```
 
-5. **Access the Application:**
+6. **Access the Application:**
     - Open your web browser and go to `http://localhost:3000`.
     - You should see the Customer Management System up and running, displaying user data fetched from the DummyJSON Users API.
 
