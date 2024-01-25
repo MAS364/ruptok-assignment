@@ -1,49 +1,65 @@
 import React, { useState } from "react";
+import './modal.css';
 
 const Modal = ({ onSubmit }) => {
+  // State for controlling the modal visibility and form data
   const [isModalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
   });
 
+  // Function to open the modal
   const openModal = () => {
     setModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setModalOpen(false);
   };
 
+  // Function to handle input changes in the form
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(formData); 
     setFormData({
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
-    });
+    }); 
+    closeModal(); // Close the modal after submission
   };
 
   return (
     <>
+      {/* Button to  modal open */}
       <div className="customer-button">
         <button onClick={openModal}>Add Customer</button>
       </div>
 
+      {/* Modal component */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
+            {/* Close button for the modal */}
             <span className="close-button" onClick={closeModal}>
               &times;
             </span>
-            <h2>Modal Content Goes Here</h2>
+            <h2>Add Customer</h2>
+            {/* Form to add a new customer */}
             <form onSubmit={handleSubmit}>
               <label>
                 First Name:
@@ -88,6 +104,7 @@ const Modal = ({ onSubmit }) => {
                   required
                 />
               </label>
+              {/* Submit button */}
               <button type="submit">Submit</button>
             </form>
           </div>

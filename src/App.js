@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Modal from "./components/Modal";
-import UserTable from "./components/Table";
+import Modal from "./components/modal";
+import UserTable from "./components/table";
 import "./App.css";
 
 const App = () => {
