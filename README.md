@@ -27,7 +27,7 @@ This project is a Customer Management System built using ReactJS. It fetches and
     ```
 
     Replace `<repository-url>` with the URL of the GitHub repository.
-    url : https://github.com/MAS364/ruptok-assignment
+    Rep-url : https://github.com/MAS364/ruptok-assignment
 
 3. **Navigate to the Project Directory:**
 
